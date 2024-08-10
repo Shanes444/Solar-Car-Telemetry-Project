@@ -1,0 +1,15 @@
+{
+  "name": "solarcarwebsite",
+  "version": "1.0.0",
+  "description": "Website for the ISU solar car team",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development"
+  },
+  "author": "Nick Kolesar",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.0.0"
+  }
+}
