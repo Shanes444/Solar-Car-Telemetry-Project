@@ -1,0 +1,326 @@
+/* Styles for pages past the login page
+ * By Nick Kolesar
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    background: #787878 url(../Images/solar_car.webp) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background: gray;
+    top: 0;
+    left: 0;
+    padding: 0px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-bottom: 2px solid lightgray;
+}
+
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #500000;
+    cursor: default;
+}
+
+.logoutBtn {
+    width: 160px;
+    height: 50px;
+    border: 3px solid #500000;
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #500000;
+    font-weight: bold;
+    margin-top: 1vh;
+    margin-left: 3vw;
+    transition: 100ms;
+}
+
+.logoutBtn:hover {
+    color: gray;
+    background: #500000;
+}
+
+.grafana-button {
+    width: 50%;
+    height: 25vh;
+    font-size: 2.5em;
+    color: #500000;
+}
+
+/************************************
+            Settings popup
+************************************/
+
+/* Gear icon background */
+.settings {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 6px;
+    right: 12.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.settings:hover {
+    background-color: lightgray;
+    border-radius: 50%;
+}
+
+.gear-icon {
+    font-size: 35px;
+}
+
+
+/* popup menu */
+
+.settings-popup {
+    position: absolute;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    max-height: 0;
+    width: 130px;
+    right: 10px;
+    top:55px;
+    background: gray;
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+    transition: max-height 125ms ease-in-out;
+}
+
+.settings-popup.active {
+    max-height: 200px;
+    z-index: 100;
+    border: 3px solid black;
+    
+}
+
+.settings-popup ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-popup li {
+    width: 100%;
+    padding: 0 0 3px;
+    margin-bottom: 3px;
+    text-align: center;
+    list-style: none;
+    z-index: 101;
+}
+
+.settings-popup li:hover {
+    background-color: lightgray;
+}
+
+.settings-popup li a {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+    color: #500000;
+    padding: 3px 0 1px 0;
+    cursor: pointer;
+}
+
+/********************************
+         Profile Page
+********************************/
+
+.returnBtn {
+    width: 160px;
+    height: 50px;
+    background:transparent;
+    backdrop-filter: blur(5px);
+    border: 3px solid #500000;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #500000;
+    font-weight: bold;
+    margin-top: 1vh;
+    margin-left: 20px;
+    transition: 100ms;
+}
+
+
+.returnBtn:hover {
+    background: transparent;
+    border: 4px solid #400000;
+    border-radius: 10px;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    background-color: gray;
+    padding: 15px;
+    border:2px solid #383C4D;
+    transition: 500ms; /* closing settings menu */
+    overflow: hidden;
+}
+
+.profile-info {
+    
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
+}
+
+.wrapper-section {
+    padding: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
+}
+
+.reset-password {
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box h2 {
+    color: #500000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-box label {
+    color: #500000;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.form-box input {
+    width: 100%;
+    margin: 3px 0 5px;
+    min-height: 20px;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+.responsive-password p {
+    text-align: right;
+    font-size: .9em;
+    font-weight: bold;
+    color: black;
+}
+
+.responsive-password .strength-container {
+    background-color: #2E424D;
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.responsive-password .strength-container #new-password-strength {
+    background-color: #D73F40;
+    width: 1%;
+    height: 100%;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+#new-password-error-message {
+    color:#500000;
+    font-weight: bold;
+}
+
+.form-box .new-password-button {
+    height: 30px;
+    color: rgba(0, 0, 0, .4);
+    font-size: 1.1em;
+    font-weight: bold;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, .4);
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: default;
+}
+
+.form-box .new-password-button.allow-submit {
+    color: #500000;
+    border-color:#500000;
+    cursor: pointer;
+}
+
+.form-box .new-password-button.allow-submit:hover {
+    border: 3px solid #500000;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    body {
+        background:#787878 url('../Images/solar_car_racing_mobile.webp') no-repeat;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .settings-popup {
+        width: 100%;
+        right: 0px;
+        border-radius: 0%;
+    }
+
+    .settings-popup.active {
+        border-left: none;
+        border-right: none;
+    }
+
+    .settings-popup.active ~ .wrapper {
+        margin-top: 60px;
+        transition: 125ms ease; /* opening settings menu */
+    }
+
+    .grafana-button {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    body {
+        background:#787878 url('../Images/solar_car_racing_mobile_super_thin.webp') no-repeat;
+        background-size: cover;
+    }
+}
