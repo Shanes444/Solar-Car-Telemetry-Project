@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="refresh">
+        <meta name="description" content="Main information control hub">
+        <meta name="viewport" content="width=device-width", initial-scale=1>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="css/main-style.css">
+        <link rel="icon" href="Images/sun.ico">
+        
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.4/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.4/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/10.12.4/firebase-database-compat.js"></script>
+         
+        <script defer src="js/main-page.js"></script>
+        <script defer type="module" src="js/config.js"></script>
+    </head>
+        
+    <body id="body" style="align-items: center;">
+        <header>
+            <h2 class="logo">Dashboard</h2>
+            <nav class="navbar">
+                <span class="settings" id="settings-button">
+                    <ion-icon class="gear-icon" name="settings-outline"></ion-icon>
+                </span>
+            </nav>
+        </header>
+        
+        <div class="settings-popup" id="settings-popup">
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a class="logout-btn" href="#">Logout</a></li>
+            </ul>
+        </div>
+        <a href="https://indigenous1151.grafana.net/public-dashboards/c092e7c16a694afc80e0f1665f500f4f" rel="nofollow" target="_blank" style="width:fit-content;"><button style="width:fit-content;" class="grafana-button">View Live Telemetry Data Dashboard</button></a>
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+    </html>

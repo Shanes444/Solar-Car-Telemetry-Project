@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="refresh">
+        <meta name="description" content="Profile page">
+        <meta name="viewport" content="width=device-width", initial-scale=1>
+        <title>Profile</title>
+        <link rel="stylesheet" href="css/main-style.css">
+        <link rel="icon" href="Images/sun.ico">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/10.12.4/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/10.12.4/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/10.12.4/firebase-database-compat.js"></script>
+
+        <script defer src="js/profile-page.js"></script>
+        <script defer src="js/main-page.js"></script>
+        <script defer type="module" src="js/config.js"></script>
+    </head>
+        
+        <body>
+            <header>
+                <h2 class="logo">Profile</h2>
+                <nav class="navbar">
+                    <span class="settings" id="settings-button">
+                        <ion-icon class="gear-icon" name="settings-outline"></ion-icon>
+                </span>
+            </nav>
+        </header>
+        
+        <div class="settings-popup" id="settings-popup">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a class="logout-btn" href="#">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="wrapper">
+            <div class="profile-info">
+                <p id="profile-email"></p>
+                <p id="profile-account-created"></p>
+            </div>
+            
+            <div class="wrapper-section reset-password">
+                <form id="reset-password-form" class="reset-password">
+                    <div class="form-box">
+                        <h2>Reset Password</h2>
+                        <label for="cur-password">Current Password</label>
+                        <input id="cur-password" name="cur-password" type="password" oninput="compareNewPasswords()" required>
+
+                        
+                        
+                        <label for="new-password">New Password</label>
+                        <input id="new-password" name="new-password" type="password" required>
+                        
+                        <div class="responsive-password">
+                            <p>Password Strength</p>
+                            <div class="strength-container">    
+                                <div id="new-password-strength"></div>
+                            </div>
+                        </div>
+
+                        <label for="confirm-password">Confirm Password</label>
+                        <input id="confirm-password" name="confirm-password" type="password" oninput="compareNewPasswords()" required>
+                        
+                        <p id="new-password-error-message"></p>
+
+                        <button type="submit" class="new-password-button">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+    </html>
